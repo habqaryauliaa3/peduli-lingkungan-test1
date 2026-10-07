@@ -1,0 +1,757 @@
+/* FONT */
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/minecraft.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* RESET & DASAR */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body {
+    margin: 0;
+    font-family: "Minecraft", sans-serif;
+    background-color: #eef5e9;
+    color: #26352a;
+    line-height: 1.7;
+}
+
+
+/*GLOBAL */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+p, h1, h2, h3, h4 {
+    margin-top: 0;
+}
+
+section {
+    padding: 100px 7%;
+}
+
+/* HEADER + NAVIGASI */
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body > header nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 14px 7%;
+    background: rgba(18, 48, 27, 0.92);
+    border-bottom: 2px solid rgba(184, 224, 154, 0.25);
+    box-shadow: 0 8px 25px rgba(20, 50, 25, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/*LOGO NAVIGASI*/
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.nav-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: rotate(-6deg) scale(1.08);
+}
+
+.nav-logo:hover {
+    color: #b8e09a;
+}
+
+/*MENU NAVIGASI */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li a {
+    display: inline-block;
+    padding: 9px 14px;
+    color: #f3f8ef;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 8px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+nav li a:hover {
+    background-color: rgba(184, 224, 154, 0.15);
+    color: #c9edaa;
+    transform: translateY(-2px);
+}
+
+nav li a:focus-visible,
+.nav-logo:focus-visible,
+.button:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid #b8e09a;
+    outline-offset: 4px;
+}
+
+/*BERANDA*/
+.hero {
+    position: relative;
+    min-height: calc(100vh - 78px);
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 50px;
+    padding: 90px 7%;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 38, 20, 0.96) 0%,
+            rgba(17, 54, 27, 0.88) 42%,
+            rgba(17, 54, 27, 0.38) 75%,
+            rgba(17, 54, 27, 0.15) 100%
+        );
+}
+
+
+/* Gambar hero */
+.hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: 0;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 29, 15, 0.25),
+            rgba(8, 29, 15, 0.55)
+        );
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Isi hero */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    color: #ffffff;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    color: #a9dc86;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 {
+    margin-bottom: 24px;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-shadow:
+        3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #b8e09a;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 620px;
+    margin-bottom: 32px;
+    color: #e5efdf;
+    font-size: 16px;
+}
+
+
+/*BUTTON*/
+.button {
+    display: inline-block;
+    padding: 14px 22px;
+    background-color: #8fbd68;
+    color: #142018;
+    text-decoration: none;
+    border: 2px solid #a8d982;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 #587a3d, 0 12px 25px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #a8d982;
+    transform: translateY(-3px);
+    box-shadow: 0 9px 0 #587a3d, 0 16px 28px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #587a3d, 0 7px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*SECTION HEADER*/
+.section-header {
+    max-width: 800px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-header h2 {
+    margin-bottom: 18px;
+    color: #1f4328;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.2;
+}
+
+.section-header > p:last-child {
+    color: #5b6d60;
+    font-size: 15px;
+}
+
+
+/*TENTANG*/
+.about {
+    background-color: #f7fbf3;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content > p {
+    color: #4f6254;
+    font-size: 16px;
+}
+
+.info-box {
+    margin-top: 35px;
+    padding: 30px;
+    background: linear-gradient(135deg, #e1f0d5, #f1f8ea);
+    border-left: 6px solid #7faa59;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(47, 80, 44, 0.08);
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+    color: #315b36;
+    font-size: 22px;
+}
+
+.info-box p {
+    margin-bottom: 0;
+    color: #536557;
+}
+
+/*ISU LINGKUNGAN*/
+.issues {
+    background-color: #eaf3e3;
+}
+
+/*ISSUE CARD*/
+.issue-card {
+    max-width: 950px;
+    margin: 0 auto 18px;
+}
+
+.issue-card details {
+    overflow: hidden;
+    background-color: #f9fcf7;
+    border: 2px solid #d4e4cc;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(48, 79, 48, 0.06);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.issue-card details:hover {
+    border-color: #9fc17f;
+    box-shadow: 0 12px 28px rgba(48, 79, 48, 0.12);
+    transform: translateY(-2px);
+}
+
+
+/*ACCORDION SUMMARY*/
+.issue-card summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 82px;
+    padding: 20px 25px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+/* Hilangkan marker bawaan browser */
+.issue-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.issue-card summary::marker {
+    display: none;
+}
+
+
+/* Nomor */
+.issue-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    height: 45px;
+    background-color: #dcebd2;
+    color: #42673f;
+    border-radius: 8px;
+    font-size: 14px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* Judul */
+.issue-title {
+    flex: 1;
+    color: #294d30;
+    font-size: 20px;
+}
+
+
+/*SIMBOL + and -*/
+.issue-card summary::after {
+    content: "+";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background-color: #dcebd2;
+    color: #42673f;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Saat accordion terbuka */
+.issue-card details[open] summary::after {
+    content: "−";
+    background-color: #78a856;
+    color: #ffffff;
+}
+
+.issue-card details[open] summary {
+    background-color: #edf6e8;
+}
+
+.issue-card details[open] .issue-number {
+    background-color: #78a856;
+    color: #ffffff;
+}
+
+
+/*ACCORDION*/
+.issue-card details > figure {
+    margin: 0;
+    padding: 0 25px;
+}
+
+.issue-card details > figure img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.issue-card details > p,
+.issue-card details > h4 {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.issue-card details > p {
+    color: #536457;
+    font-size: 15px;
+}
+
+.issue-card details > p:first-of-type {
+    margin-top: 25px;
+}
+
+.issue-card details > p:last-of-type {
+    margin-bottom: 28px;
+}
+
+
+/* Judul Dampak dan Solusi */
+.issue-card details h4 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: #3e6b3f;
+    font-size: 18px;
+}
+
+
+/*SOLUSI*/
+.solutions {
+    background-color: #f7fbf3;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    padding: 30px 24px;
+    background-color: #ffffff;
+    border: 2px solid #dce9d5;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(45, 75, 42, 0.06);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-7px);
+    border-color: #9fc17f;
+    box-shadow: 0 16px 30px rgba(45, 75, 42, 0.12);
+}
+
+.solution-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 20px;
+    background-color: #e2f0d8;
+    border-radius: 10px;
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover .solution-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.solution-card h3 {
+    margin-bottom: 12px;
+    color: #315c36;
+    font-size: 20px;
+}
+
+.solution-card p {
+    margin-bottom: 0;
+    color: #5b6b5e;
+    font-size: 14px;
+}
+
+
+/*KONTAK*/
+.contact {
+    background-color: #e8f1e3;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-style: normal;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border: 2px solid #d4e4cc;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(45, 75, 42, 0.06);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #9fc17f;
+    box-shadow:
+        0 14px 28px rgba(45, 75, 42, 0.12);
+}
+
+.contact-card a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-card img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.contact-card a > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contact-card strong {
+    color: #315c36;
+    font-size: 18px;
+}
+
+.contact-card a > span > span {
+    color: #627265;
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 28px 7%;
+    background-color: #14281a;
+    color: #cddbc9;
+    border-top: 3px solid #6f984f;
+}
+
+footer p {
+    margin: 0;
+    font-size: 13px;
+}
+
+footer nav a {
+    color: #b8e09a;
+    text-decoration: none;
+    font-size: 13px;
+    transition:
+        color 0.25s ease;
+}
+
+footer nav a:hover {
+    color: #ffffff;
+}
+
+
+/*RESPONSIVE TABLET*/
+@media (max-width: 1000px) {
+    header nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 700px;
+        grid-template-columns: 1fr;
+        align-content: center;
+        padding: 80px 7%;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVE HP*/
+@media (max-width: 650px) {
+    section {
+        padding: 75px 5%;
+    }
+
+    /* NAV */
+    header nav {
+        padding: 14px 5%;
+        align-items: flex-start;
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        touch-action: pan-x;
+    }
+
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav li a {
+        padding: 8px 11px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 650px;
+        padding: 70px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-content > p:not(.eyebrow) {
+        font-size: 14px;
+    }
+
+    /* ABOUT */
+    .info-box {
+        padding: 22px;
+    }
+
+    /* ACCORDION */
+    .issue-card summary {
+        min-height: 72px;
+        padding: 15px;
+    }
+
+    .issue-number {
+        min-width: 38px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+    .issue-title {
+        font-size: 16px;
+    }
+
+    .issue-card summary::after {
+        width: 30px;
+        height: 30px;
+        font-size: 19px;
+    }
+
+    .issue-card details > figure {
+        padding: 0 15px;
+    }
+
+    .issue-card details > p,
+    .issue-card details > h4 {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+
+    /* SOLUSI */
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* KONTAK */
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 5%;
+    }
+}
+
+/*REDUCE MOTION*/
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}   
